@@ -1,0 +1,14 @@
+;  make sure PDFDevice is installed
+If $components.$findname("PDF Device")
+	;  make sure it is of the right version
+	Calculate external_version as $components.PDF Device.$version
+	Calculate omnis_version as strtok(nam(external_version),'.')
+	If external_version<320
+		OK message  {The installed PDFDevice DLL is of an older version. Please download and install version 3.2.0 or better in the Omnis Studio XCOMP folder.}
+		Close library {[$clib().$name]}
+	End If
+Else
+	OK message  {Unable to locate the PDFDevice DLL. Please download and install version 3.2.0 or better in the Omnis Studio XCOMP folder.}
+	Close library {[$clib().$name]}
+End If
+Modify class {rfPDFDevice}

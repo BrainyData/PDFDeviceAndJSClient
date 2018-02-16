@@ -1,0 +1,239 @@
+{
+	"classtype": "kReport",
+	"internalversion": 22,
+	"designtaskname": "Startup_Task",
+	"nextident": 1040,
+	"lastgroupident": 0,
+	"usecms": true,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivDetails",
+			"order": 2,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivFootnote",
+			"order": 5,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivPrintTotal",
+			"order": 4,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivSecHeading",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "ivSubHeading",
+			"order": 1,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"backcolor": "RGB(0,0,0)",
+		"backiconid": 0,
+		"backpattern": 15,
+		"backpicture": {
+			"$base64": ""
+		},
+		"bordercolor": "RGB(0,0,0)",
+		"borderpos": "kBordPosMargins",
+		"bottommargin": 1.001,
+		"callprintonexport": false,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"copies": 0,
+		"createdate": "2015-05-29 15:45:25",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"exportformat": "kEXnone",
+		"external": true,
+		"forecolor": "RGB(0,0,0)",
+		"horzdpi": 0,
+		"horzgrid": 0.508,
+		"horzoffset": 0.0,
+		"horzpages": false,
+		"islabel": false,
+		"islist": false,
+		"issupercomponent": false,
+		"labelcount": 0,
+		"labelwidth": 0.0,
+		"leftmargin": 1.001,
+		"linestyle": 1,
+		"loadpagesetup": true,
+		"macosdestname": "",
+		"macosdesttype": "kPrinter",
+		"mainfile": "",
+		"mainlist": "",
+		"moddate": "2015-05-31 19:10:26",
+		"orientation": "kOrientDefault",
+		"pagesetupdata": {
+			"$base64": ""
+		},
+		"paper": "kPaDefault",
+		"paperlength": 0.0,
+		"paperwidth": 0.0,
+		"picturealign": "kPALtopLeft",
+		"recordspacing": 0.0,
+		"repeatfactor": 1,
+		"rightmargin": 1.001,
+		"scale": 0,
+		"showascheckedout": false,
+		"showgrid": true,
+		"shownames": false,
+		"sizetogrid": false,
+		"topmargin": 1.001,
+		"userinfo": "",
+		"version": "",
+		"vertdpi": 0,
+		"vertoffset": 0.0
+	},
+	"sortfields": [
+		{
+			"order": 1,
+			"properties": {
+				"dataname": "ivSecHeading",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": true,
+				"upper": false
+			}
+		},
+		{
+			"order": 2,
+			"properties": {
+				"dataname": "ivSubHeading",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": true,
+				"upper": false
+			}
+		},
+		{
+			"order": 3,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 4,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 5,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 6,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 7,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 8,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		},
+		{
+			"order": 9,
+			"properties": {
+				"dataname": "",
+				"descending": false,
+				"newpage": false,
+				"newpageinterval": 0.0,
+				"newpageintervalstart": 0.0,
+				"subtotalinterval": 0.0,
+				"subtotalintervalstart": 0.0,
+				"subtotals": false,
+				"upper": false
+			}
+		}
+	]
+}

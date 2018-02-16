@@ -1,0 +1,11 @@
+On evClick
+	;  are we using a seperate remote task instance or are we re-using our remote form's task instance
+	;       ;; if we are using our own instance we must add the connection ID to the url
+	Calculate url as pick(ivUseRemoteFormTask,ivPDFUrl,ivPDFUrlSelf)
+	;  assign the embed tag to our PDF viewer control or use $showurl
+	;  this will cause the call to the server to print the report and return the PDF mime
+	If ivEmbed
+		Calculate $cinst.$objs.ctrlEmbedPDF.$html as con('<embed style="border: 1px solid rgb(128,128,128)" width="100%" height="100%" src="',url,'">')
+	Else
+		Do $cinst.$showurl(url)
+	End If

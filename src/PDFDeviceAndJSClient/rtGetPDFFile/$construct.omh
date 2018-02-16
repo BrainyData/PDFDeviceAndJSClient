@@ -1,0 +1,7 @@
+;  here we print the report and return the mime data to the client
+;  pParams can contain optional parameters if so required
+Send to trace log {rtGetPDFFile called}
+;  print the report
+Do $cinst.$printreport()
+;  return the mime data
+Quit method $cinst.$pdfmime

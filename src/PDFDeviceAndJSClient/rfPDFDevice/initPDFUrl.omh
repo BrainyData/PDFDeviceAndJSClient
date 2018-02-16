@@ -1,0 +1,11 @@
+;  create http address that will send a ultra-thin request to rtGetPDFFile
+
+;       ;; get omnis server address and port
+TCPGetMyAddr  Returns ip_addr
+Calculate ip_port as $modes.$dotoolmethod(kEnvToolBrowser,160)     ;; Returnｓ the port Omnis is listening on ($prefs.$serverport is unreliable as it may be zero in which case Omnis chooses a port)
+
+;       ;; calculate the url address that will make an ultra-thin call to fetch the PDF file
+Calculate ivPDFUrl as con("http://",ip_addr,":",ip_port,"/ultra?OmnisServer='",ip_addr,":",ip_port,"'&OmnisLibrary=",$clib().$name,"&OmnisClass=rtGetPDFFile&PDFOwner=",$cinst().$name)
+
+;       ;; calculate the url for calling the remote form's task instance
+Calculate ivPDFUrlSelf as con("http://",ip_addr,":",ip_port,"/ultra?OmnisServer='",ip_addr,":",ip_port,"'&OmnisLibrary=",$clib().$name,"&OmnisClass=rtPDFDevice&PDFOwner=",$cinst().$name,'&ConnectionID=',$ctask.$connectionid)
