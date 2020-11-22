@@ -1,0 +1,2 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do $classes.Startup_Task.$methods.//$construct//.$modify()

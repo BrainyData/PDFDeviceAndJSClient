@@ -1,0 +1,8 @@
+;  this method is NOT essential
+;       ;; it is merely used so that the examples perform with a specific set of device options as defined by the designer of these examples
+;       ;; these options are maintained in the file "PDFDeviceAndJSClient.prefs" that accompanies this library
+
+;  restore device parameters when library closes
+If ivSavedParams.$colcount
+	Do $devices.[kDevPdf].$setparam(kDevPdfAll,ivSavedParams)
+End If

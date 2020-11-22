@@ -1,0 +1,2 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do $classes.e1_RemoteForm.$methods.//$printForEmbed//.$modify()

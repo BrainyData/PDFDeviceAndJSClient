@@ -1,0 +1,3 @@
+On evClick
+	Calculate ivOutlines.FontName as pick(pCommandID-1000,'Arial','Comic Sans MS','Georgia','Times New Roman','Trebuchet MS','Verdena')
+	Do $cinst.$objs.TabPane.$objs.Outlines.$dataname.$assign("ivOutlines")

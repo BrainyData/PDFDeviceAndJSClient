@@ -1,0 +1,2 @@
+On evClick
+	Calculate ivParams.WMFont as ivWMFontList.ivFontName

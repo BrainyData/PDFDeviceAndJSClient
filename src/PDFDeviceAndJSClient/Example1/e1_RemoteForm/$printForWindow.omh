@@ -1,0 +1,21 @@
+;  print for display in a browser window
+;       ;; this requires returning an url that can fetch our PDF data via our remote task
+;       ;; we will produce the PDF data now and store it in the task variable tvPdfData, so the task can simply return it
+
+;  1. prepare our output device
+Do $cdevice.$assign(kDevPdf)
+;  1.a     ;; apply device params to external device (our task stores settings that apply just to its forms)
+Do $ctask.$applydeviceparams()
+;  1.b     ;; tell PDFDevice to send output to our local variable
+;       ;; we will store the PDF data in our remote task, ready for the evPost call
+;       ;; Note: providing a mime file name for $setmemoryoutput causes PDFDevice to prefix the PDF data with a mime header
+Do PDF Device.$setmemoryoutput(nam(tvPdfData),"BrainyDataDocument.pdf")
+
+;  2. print our report
+Do method $cinst.$printDocument
+
+;  3. return result for display on client
+If binlength(tvPdfData)
+	;       ;; return the ultra-thin client URL for returning PDF via a generic task
+	Quit method con("http://",pHost,"/ultra?OmnisServer='",pHost,"'&OmnisLibrary=",$clib().$name,"&OmnisClass=",$ctask().$name,"&FormName=",$cinst().$name,"&ConnectionID=",$ctask.$connectionid,"&FileName=BrainyDataLetter.pdf&FormAction=fetchpdf")
+End If

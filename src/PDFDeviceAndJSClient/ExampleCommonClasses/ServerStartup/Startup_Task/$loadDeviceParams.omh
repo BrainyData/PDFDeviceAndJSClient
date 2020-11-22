@@ -1,0 +1,16 @@
+;  this method is NOT essential
+;       ;; it is merely used so that the examples perform with a specific set of device options as defined by the designer of these examples
+;       ;; these options are maintained in the file "PDFDeviceAndJSClient.prefs" that accompanies this library
+
+;  always preserve the current settings
+Do $devices.[kDevPdf].$getparam(kDevPdfAll) Returns ivSavedParams
+
+;  load our device params from this library's preference file
+If FileOps.$doesfileexist(lvPrefsPath)
+	Do lvFile.$openfile(lvPrefsPath)
+	Do lvFile.$readfile(lvBin)
+	Do lvFile.$closefile()
+	Calculate lvRow as lvBin
+	;  first save the current seetings (to be restored when library closes)
+	Do $devices.[kDevPdf].$setparam(kDevPdfAll,lvRow)
+End If

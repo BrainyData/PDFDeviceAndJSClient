@@ -1,0 +1,10 @@
+;  check password and prompt user with recomendations if required
+If len(ivParams.OwnerPassword)=0&len(ivParams.UserPassword)>0
+	OK message Security Options Error (Icon,Sound bell,Cancel button) {Owner password is empty. Specifying a user password only may prevent owner access of the resulting PDF file. Continue?}
+	If flag false
+		Calculate refTabPane.$currenttab as 7
+		Quit method kFalse
+	End If
+End If
+;  call server to perform save
+Do method $cinst.$serverSaveParams

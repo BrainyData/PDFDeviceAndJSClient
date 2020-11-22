@@ -1,0 +1,4 @@
+;  Enter your initialization code here
+Calculate ivData as pData
+Do $cinst.$printrecord()
+Do $cinst.$endprint()

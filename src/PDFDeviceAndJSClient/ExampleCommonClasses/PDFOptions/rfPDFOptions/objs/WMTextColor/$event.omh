@@ -1,0 +1,2 @@
+On evClick
+	Calculate ivParams.WMTextColor as ivWMColorList.ivColorId

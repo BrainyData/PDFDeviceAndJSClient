@@ -1,0 +1,34 @@
+
+;  1. in case the client has changed device parameters for this form, we must apply them
+;       ;; this is an optional implementation if it is desirable to provide clients with an interface to change PDF output settings
+Do $ctask.$applydeviceparams()
+
+;  2. set temp file name (file will be removed after 1 minute from production of file)
+;       ;; method will return temp path and file name
+Do PDF Device.$settempfilename(1,lvPath,lvName)
+
+;  3. print the report/reports
+Do $cdevice.$assign(kDevPdf)
+If ivAppendBlurb
+	;       ;; print our letter and PDF blurb reports to the same PDF file
+	Do $cdevice.$open()
+	Set report name eX_Report
+	Print report {(ivData)}     ;; pass form data to report instance
+	Set report name eX_ReportPDFKeyActions
+	Print report
+	Set report name eX_ReportPDFBlurb
+	Print report
+	Do $cdevice.$close()
+Else
+	;       ;; print our letter only
+	Set report name eX_Report
+	Print report {(ivData)}     ;; pass form data to report instance
+End If
+
+;  4. use client commands to display the PDF
+;       ;; because we did not use the Omnis temp file mechanism we must provide the full PDF file path
+If ivUseClientCommandShowPDF
+	Do $cinst.$clientcommand('showpdf',row(con(lvPath,lvName),1,lvName))
+Else
+	Do $cinst.$clientcommand('assignpdf',row('ctrlEmbedPDF','toolbar=1',con(lvPath,lvName),1,lvName))
+End If

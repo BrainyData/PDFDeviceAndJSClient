@@ -1,0 +1,2 @@
+On evClick
+	Do $ctask.$closeform($cclass().$name)

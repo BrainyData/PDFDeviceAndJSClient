@@ -1,0 +1,2 @@
+On evKeyPress
+	Do method $cinst.$setControls

@@ -1,0 +1,2 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do $classes.e2_RemoteForm.$methods.//$printDocument//.$modify()

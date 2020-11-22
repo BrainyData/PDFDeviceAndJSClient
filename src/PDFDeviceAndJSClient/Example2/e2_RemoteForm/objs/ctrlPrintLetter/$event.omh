@@ -1,0 +1,2 @@
+On evClick
+	Do method $cinst.$printDocument     ;; this will call our server method that prints and uses the client command 'assignpdf' or 'showpdf'

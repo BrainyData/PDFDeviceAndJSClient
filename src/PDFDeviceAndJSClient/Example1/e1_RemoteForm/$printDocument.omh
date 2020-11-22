@@ -1,0 +1,18 @@
+;  print our report
+;       ;; if ivAppendBlurb is true we print our letter and PDF blurb report to the same PDF file
+;       ;; i.e. printing multiple reports to the same output using $cdevice.$open() and $cdevice.$close()
+If ivAppendBlurb
+	;  print three reports to same PDF document
+	Do $cdevice.$open()
+	Set report name eX_Report
+	Print report {(ivData)}     ;; pass form data to report instance
+	Set report name eX_ReportPDFKeyActions
+	Print report
+	Set report name eX_ReportPDFBlurb
+	Print report
+	Do $cdevice.$close()
+Else
+	;  print a single report to PDF document
+	Set report name eX_Report
+	Print report {(ivData)}     ;; pass form data to report instance
+End If

@@ -1,0 +1,30 @@
+{
+	"ident": 1020,
+	"order": 16386,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "",
+		"font": 1,
+		"fontsize": 15,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 122,
+		"left": 26,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "\u001B\u000200000001#Example 1: Print to memory...\u001B\u000200000000#\r\rThe remote form \u001B\u000200000002#e1_RemoteForm\u001B\u000200000000# and the remote task \u001B\u000200000002#e1_RemoteTask\u001B\u000200000000# demonstrate how to print reports to a binary variable and return that PDF data to the client for displaying in an embed control or a seperate browser window."
+		},
+		"textcolor": "kColorWindowText",
+		"top": 213,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 693
+	}
+}

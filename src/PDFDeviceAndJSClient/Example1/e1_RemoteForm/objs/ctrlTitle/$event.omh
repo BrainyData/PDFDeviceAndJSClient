@@ -1,0 +1,2 @@
+On evClick
+	;  executed on server so the option is syncronized with server (the ultra-thin client call does not update it)

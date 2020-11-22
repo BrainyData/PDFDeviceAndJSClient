@@ -1,0 +1,2 @@
+On evTabSelected
+	Calculate $cinst.$objs.TabPane.$currentpage as pTabNumber

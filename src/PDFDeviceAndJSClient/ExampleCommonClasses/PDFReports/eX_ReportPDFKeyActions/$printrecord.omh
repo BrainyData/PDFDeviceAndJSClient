@@ -1,0 +1,8 @@
+If pos("Example",ivSubHeading)=1
+	Calculate $cinst.$objs.objDetails.$font as 'Courier'
+	Calculate $cinst.$objs.objDetails.$textcolor as rgb(119,0,119)
+Else
+	Calculate $cinst.$objs.objDetails.$font as 'Times New Roman'
+	Calculate $cinst.$objs.objDetails.$textcolor as rgb(0,119,0)
+End If
+Do default

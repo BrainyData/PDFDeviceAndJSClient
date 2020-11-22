@@ -1,0 +1,5 @@
+On evAfter
+	If ivOutlinesCount<>ivOutlines.$linecount
+		Calculate ivOutlines.$linecount as ivOutlinesCount
+		Do $cinst.$objs.TabPane.$objs.Outlines.$dataname.$assign("ivOutlines")
+	End If

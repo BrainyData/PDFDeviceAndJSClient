@@ -1,0 +1,8 @@
+On evClick
+	If ivDisplayInWindow
+		JavaScript: lvHost = window.location.host;
+		Do method $cinst.$printForWindow (lvHost)
+		;  Do method $cinst.$printForEmbed
+	Else
+		Do method $cinst.$printForEmbed
+	End If

@@ -1,0 +1,84 @@
+Calculate ivSecHeading as "Library Startup"     ;; =====================================================
+Calculate ivSubHeading as "Prior to starting the PDF Device server."
+Calculate ivDetails as "Start the Omnis server and intialize the device parameters to the desired settings that all server threads are to inherit."
+Do $cinst.$printrecord()
+
+Calculate ivSubHeading as "Starting the PDF Device Server."
+Calculate ivDetails as "Call PDF Device.$startserver() to start the BDPDF server. A PDF device is instantiated for each server thread (see $prefs.$serverstacks) and is initialized with the device parameters from the global application PDF device."
+Do $cinst.$printrecord()
+
+
+
+Calculate ivSecHeading as "Setting the Destination"     ;; =====================================================
+Calculate ivSubHeading as "Using a temporary or permanent file"
+Calculate ivDetails as "Setting a temporary file is avchieved using the function PDF Device.$settempfilename( iMinutes, &cOutPath, &cOutName ), which is listed in the Catalog under Functions->PDF Device."
+Do $cinst.$printrecord()
+
+Calculate ivDetails as "- iMinutes: Specifies the length of time in minutes after which the file is deleted by PDF Device. If zero is specified the file is not deleted."
+Do $cinst.$printrecord()
+
+Calculate ivDetails as "- cOutPath: If empty, it receives the path to the Omnis default PDF folder if iMinutes is zero, or the Omnis temp PDF folder if a time is specified by iMinutes. If cOutPath is not empty, PDF Device will place the file in the specified folder."
+Do $cinst.$printrecord()
+
+Calculate ivDetails as "- cOutName: If empty, it receives the temp name as calculated by PDF Device using the prefix 'bdpdf' a date and time (to the minute) and a unique number within the minute. You may specify your own prefix and PDF Device will use your refix instead. If cOutName contents a dot, PDF Device assumes you provided the entire file name which it will use instead of calculating a name."
+Do $cinst.$printrecord()
+
+Calculate ivSubHeading as "Example (remote form $doprint)"
+Begin text block
+Text: {Do PDF Device.$settempfilename( 1, lvPath, lvName )} (Carriage return)
+Text: {Do $cdevice.$assign(kDevPdf)} (Carriage return)
+Text: {Set report name myReport} (Carriage return)
+Text: {Print report} (Carriage return)
+Text: {$cinst.$clientcommand('assignpdf',row('ctrlEmbedPDF','toolbar=1',con(lvPath,lvName),1,lvName))} (Carriage return)
+End text block
+Get text block ivDetails
+Do $cinst.$printrecord()
+
+Calculate ivSubHeading as "Using a memory variable"
+Calculate ivDetails as "Instead of sending output to a file, output can be send directly to a binary variable in your library by using the function PDF Device.$setmemoryoutput( cOutputVariableName [,cMimeFileName] ), which is also listed in the Catalog under Functions->PDF Device."
+Do $cinst.$printrecord()
+
+Calculate ivDetails as "- cOutputVariableName: Specifies the binary variable name that is to receive the PDF output. WARNING!!! The variable must be still in scope when the report finishes printing (or the device is closed using $close() when printing multiple reports). For example, if you are using a local variable, the method must finish printing the report prior to quiting the method. PDF Device will not be able to tell if the variable no longer exists by the time it comes to write the PDF output. If the variable has gone out of scope Omnis may crash."
+Do $cinst.$printrecord()
+
+Calculate ivDetails as "- cMimeFileName: If cMimeFileName is specified, PDF Device will prefix the PDF output with a mime header, suitable for returning as the result of a ultra-thin client call. The name provided by cMimeFileName should be a simple file name with the .pdf extension. This filename will be used by the browser if the client chooses to save the PDF file to disk."
+Do $cinst.$printrecord()
+
+Calculate ivSubHeading as "Example (ultra-thin remote task $construct)"
+Begin text block
+Text: {Do PDF Device.$setmemoryoutput( lvBinaryVar, 'report.pdf' )} (Carriage return)
+Text: {Do $cdevice.$assign(kDevPdf)} (Carriage return)
+Text: {Set report name myReport} (Carriage return)
+Text: {Print report} (Carriage return)
+Text: {Quit method lvBinaryVar} (Carriage return)
+End text block
+Get text block ivDetails
+Do $cinst.$printrecord()
+
+
+
+Calculate ivSecHeading as "Printing"     ;; =====================================================
+Calculate ivSubHeading as "Single report"
+Calculate ivDetails as "Printing just one report to a PDF file is as simple as setting the report name and executing Omnis' Print command. By the time the Print command returns control to you, the PDF file will have been written to disk."
+Do $cinst.$printrecord()
+
+Calculate ivSubHeading as "Multiple reports"
+Calculate ivDetails as "To print multiple reports, you use the device notation $open() to open the PDF file for output, prior to printing your reports. After you have printed all the reports to be included in the file, you must call the device notation $close() to complete the file."
+Do $cinst.$printrecord()
+
+
+
+Calculate ivSecHeading as "Returning PDF to the client"     ;; =====================================================
+Calculate ivSubHeading as "Using Omnis client commands 'showpdf' or 'assignpdf'"
+Calculate ivDetails as "If you have generated an output file, you may use the client commands 'showpdf' or 'assignpdf'. You must concatonate the path and name as returned by $settempfilename() when using these commands, i.e. $cinst.$clientcommand('showpdf',row(con(lvPath,lvName),1,lvName)) or $cinst.$clientcommand('assignpdf',row('ctrlEmbedPDF','toolbar=1',con(lvPath,lvName),1,lvName))"
+Do $cinst.$printrecord()
+
+Calculate ivSubHeading as "Returning PDF mime data"
+Calculate ivDetails as "If you called the server task via an ultra-thin call and you send the output to a memory variable, you can return the mime data of the PDF simply by executing Quit method, specifying the PDF data that was send to your specified memory variable. See section 'Using a memory variable' above."
+Do $cinst.$printrecord()
+
+
+
+
+
+;

@@ -1,0 +1,35 @@
+;  make sure PDFDevice is installed
+If $components.$findname("PDF Device")
+	;  make sure it is of the right version
+	Calculate external_version as $components.PDF Device.$version
+	Calculate omnis_version as strtok(nam(external_version),'.')
+	If external_version<4000
+		OK message  {The installed PDFDevice DLL is of an older version. Please download and install version 4.0 or better in the Omnis Studio XCOMP folder.}
+		Close library {[$clib().$name]}
+	End If
+Else
+	OK message  {Unable to locate the PDFDevice DLL. Please download and install version 4.0 or better in the Omnis Studio XCOMP folder.}
+	Close library {[$clib().$name]}
+End If
+
+;  NOT ESSENTIAL: loads prefered device parameters for this example from the accompanying file (while at the same time preserving your original settings)
+Do $cinst.$loadDeviceParams()
+
+;  connect our desktop PDF options window to the 'Advanced' button in the Omnis destination window
+Calculate lvAdvancedNotation as con("$root.$libs.",$clib().$name,".$windows.wPDFOptions.$openonce('PDFAOptions',kWindowCenter)")
+Do $devices.[kDevPdf].$setparam(kDevPdfAdvanced,lvAdvancedNotation)
+
+;  start the omnis server first
+Start server
+
+;  ensure the main thread device is prepared with all the settings we require for our thread devices
+Do $cinst.$initDeviceParams()
+
+;  now start the BDPDF device server
+;  the following call will create unique device instances for each server thread, copying current the desktop device settings
+;       ;; after the call to $startserver, the server thread devices cannot be manipulated outside the specific server thread
+;       ;; thus any general settings that are to be applied to the server threads must be applied to the desktop device prior to calling $startserver
+Do PDF Device.$startserver()
+
+;  open example navigation window
+Do $clib.$classes.wStartup.$openonce('*',kWindowCenter)

@@ -1,0 +1,30 @@
+{
+	"ident": 1031,
+	"order": 16391,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "",
+		"font": 1,
+		"fontsize": 15,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 140,
+		"left": 26,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "\u001B\u000200000001#The device parameters form...\u001B\u000200000000#\r\rExamples 1 and 2 allow the setting of the device parameters on the client. To make this possible the library contains a number of classes that facilitate this.\r\rSee classes in the Studio Browser in the folder \"ExampleCommonClasses->PDFOptions\"."
+		},
+		"textcolor": "kColorWindowText",
+		"top": 647,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 693
+	}
+}

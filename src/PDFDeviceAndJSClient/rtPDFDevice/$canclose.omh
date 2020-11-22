@@ -1,5 +1,0 @@
-If not(ivCanClose)
-	Calculate ivCanClose as kTrue
-	Quit method kFalse
-End If
-Quit method kTrue

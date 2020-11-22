@@ -1,0 +1,30 @@
+{
+	"ident": 1025,
+	"order": 16388,
+	"objtype": "kText",
+	"properties": {
+		"align": "kRightJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFtopBottom",
+		"fieldstyle": "",
+		"font": 1,
+		"fontsize": 10,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 15,
+		"left": 26,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "\u001B\u000200000001#2020 © Brainy Data Limited"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 805,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 693
+	}
+}

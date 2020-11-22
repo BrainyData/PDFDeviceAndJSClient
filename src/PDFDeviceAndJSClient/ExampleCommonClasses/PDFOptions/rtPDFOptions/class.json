@@ -1,0 +1,53 @@
+{
+	"classtype": "kRemoteTask",
+	"internalversion": 12,
+	"nextident": 1,
+	"tvardefs": [
+		{
+			"name": "tvFileUpload",
+			"order": 1,
+			"type": "kBinary",
+			"subtype": 0,
+			"sublen": 100000000
+		}
+	],
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivDeviceParams",
+			"order": 1,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "#NULL",
+			"desc": "PDFDevice device params to be used within this task's remote forms"
+		}
+	],
+	"properties": {
+		"basehttpresponseheaders": "",
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2020-05-09 11:36:42",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"issupercomponent": false,
+		"localtestdata": "",
+		"localtime": false,
+		"maxtime": 0,
+		"maxusers": 0,
+		"moddate": "2020-06-20 14:06:04",
+		"restful": false,
+		"restfulapiname": "",
+		"showascheckedout": false,
+		"stringtable": "",
+		"timeout": 0,
+		"userinfo": "",
+		"version": "",
+		"webservice": ""
+	}
+}

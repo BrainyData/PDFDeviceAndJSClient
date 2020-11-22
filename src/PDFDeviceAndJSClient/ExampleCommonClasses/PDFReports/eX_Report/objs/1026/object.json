@@ -1,0 +1,29 @@
+{
+	"ident": 1026,
+	"order": 8,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 4,
+		"fontextra": 0,
+		"fontsize": 8,
+		"fontstyle": "kPlain",
+		"height": -1,
+		"left": 16.642,
+		"lineno": 7,
+		"lineoffset": 0.0,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "0870 474 0708"
+		},
+		"textcolor": "RGB(0,102,0)",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 2.276
+	}
+}

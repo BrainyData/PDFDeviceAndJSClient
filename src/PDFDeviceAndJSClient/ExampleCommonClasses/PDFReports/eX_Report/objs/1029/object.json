@@ -1,0 +1,29 @@
+{
+	"ident": 1029,
+	"order": 11,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 4,
+		"fontextra": 0,
+		"fontsize": 8,
+		"fontstyle": "kPlain",
+		"height": -1,
+		"left": 16.642,
+		"lineno": 9,
+		"lineoffset": 0.033,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "www.brainydata.com"
+		},
+		"textcolor": "RGB(0,102,0)",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 3.36
+	}
+}

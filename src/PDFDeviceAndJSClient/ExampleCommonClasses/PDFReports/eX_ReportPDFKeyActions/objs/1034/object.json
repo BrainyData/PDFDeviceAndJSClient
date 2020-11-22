@@ -1,0 +1,29 @@
+{
+	"ident": 1034,
+	"order": 19,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 5,
+		"fontextra": 0,
+		"fontsize": 8,
+		"fontstyle": "kPlain",
+		"height": 1.234,
+		"left": 0.107,
+		"lineno": 22,
+		"lineoffset": 0.0,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "*Figures based on a report containing 50 A4 pages and 10 medium sized images (0.5 mega pixels average size). Test platform Omnis Studio 6.0 running on a Macintosh 2.66 GHz Intel Core i7 laptop with 8 GB 1067 MHz memory. Images were converted to JPEG format at 75% quality. Stated time indicates how long it took PDFDevice to output each individual page to a PDF document and does not include the time it took by Omnis to prepare the report for output."
+		},
+		"textcolor": "RGB(0,119,0)",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 18.875
+	}
+}

@@ -1,0 +1,7 @@
+;  prevent closing of task after a post message (closing the task is Omnis' default behaviour after an evPost)
+If not(ivCanCloseAfterPost)
+	Calculate ivCanCloseAfterPost as kTrue
+	Quit method kFalse
+End If
+;  in all other cases allow task to close
+Quit method kTrue

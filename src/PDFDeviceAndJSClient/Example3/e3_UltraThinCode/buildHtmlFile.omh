@@ -1,0 +1,63 @@
+;  build a basic html file to display in default browser
+;       ;; the html will contain a link for an ultra-thin call to our remote task
+
+;  get my ip address and port
+TCPGetMyAddr  Returns lvIP
+Do $modes.$dotoolmethod(kEnvToolBrowser,160) Returns lvPort
+Calculate lvHost as con(lvIP,":",lvPort)
+
+;  create the html text
+Begin text block
+
+Text: {<!DOCTYPE html>} (Platform newline)
+Text: {<html><head><style>body {background-color: rgb(255,255,221);}</style></head><body leftmargin="50">} (Platform newline)
+;  Text: {<img src="https://www.brainydata.com/images/bannername.gif">} (Linefeed,Platform newline)
+Text: {<h1>PDFDevice ultra-thin client Example</h1>} (Linefeed,Platform newline)
+Text: {<p>The submit button below executes an ultra thin call and opens the returned content in a new browser window:</p>} (Platform newline)
+
+;       ;; the next block is the ultra-thin form with link to Omnis
+Text: {<form action="http://[lvHost]/ultra" target="_blank">} (Platform newline)
+Text: {  <input type="hidden" id="OmnisServer" name="OmnisServer" value="'[lvHost]'">} (Platform newline)
+Text: {  <input type="hidden" id="OmnisLibrary" name="OmnisLibrary" value="PDFDeviceAndJSClient">} (Platform newline)
+Text: {  <input type="hidden" id="OmnisClass" name="OmnisClass" value="e3_RemoteTask">} (Platform newline)
+;       ;; the file options
+Text: {<h3>File Options</h3>} (Platform newline)
+Text: {  <label for="FileName">PDF File Name:</label>} (Platform newline)
+Text: {  <input type="text" id="FileName" name="FileName" value="UltraThinLetter.pdf">} (Platform newline)
+Text: {  <input type="checkbox" id="PrintBlurp" name="PrintBlurp" value="1">} (Platform newline)
+Text: {  <label for="PrintBlurp">Print Blurp</label><br><br><br>} (Platform newline)
+;       ;; the report data
+Text: {<h3>Report Data</h3>} (Platform newline)
+Text: {<blockquote>} (Platform newline)
+Text: {  <label for="Title">Title:</label><br>} (Platform newline)
+Text: {  <input type="text" id="Title" name="Title" value="Mr."><br><br>} (Platform newline)
+Text: {  <label for="FirstName">First name:</label><br>} (Platform newline)
+Text: {  <input type="text" id="FirstName" name="FirstName" value="John"><br><br>} (Platform newline)
+Text: {  <label for="LastName">Last name:</label><br>} (Platform newline)
+Text: {  <input type="text" id="LastName" name="LastName" value="Doe"><br><br><br>} (Platform newline)
+Text: {  <input type="submit" value="Submit">} (Platform newline)
+Text: {</blockquote>} (Platform newline)
+Text: {</form> } (Platform newline)
+
+Text: {</body></html>} (Carriage return,Linefeed)
+
+End text block
+Get text block lvHtml
+
+;  write the html to a file
+Calculate lvFilePath as replace($clib.$pathname,".lbs",".html")
+Do FileOps.$deletefile(lvFilePath)
+Do lvFile.$createfile(lvFilePath)
+Do lvFile.$writefile(chartoutf8(lvHtml))
+Do lvFile.$closefile()
+
+;  open the file in default browser
+Switch sys(6)
+	Case 'X'
+		Calculate lvURL as con("file://",lvFilePath)
+		Calculate lvScript as con('property target_URL : "',lvURL,'"',kCr,'open location target_URL')
+		Do $root.$runapplescript(lvScript,lvResults)
+	Case 'W','N'
+		Calculate lvURL as lvFilePath
+		Launch program ,[lvURL] (Do not quit Omnis)
+End Switch

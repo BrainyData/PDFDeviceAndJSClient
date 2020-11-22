@@ -1,0 +1,16 @@
+{
+	"classtype": "kFolder",
+	"internalversion": 0,
+	"properties": {
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2020-11-21 11:00:09",
+		"desc": "Classes for handling PDF device parameters on JS client and during printing on server",
+		"editor": "",
+		"editordata": "",
+		"external": false,
+		"moddate": "2020-11-21 11:00:09",
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": ""
+	}
+}

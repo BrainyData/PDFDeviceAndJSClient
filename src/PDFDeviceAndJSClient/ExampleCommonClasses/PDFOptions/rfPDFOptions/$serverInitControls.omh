@@ -1,0 +1,7 @@
+;  Watermark Tab
+Calculate $cinst.$objs.TabPane.$objs.labelWMHorzPos.$text as con(pick($prefs.$usecms,"inches","cms")," from left of page")
+Calculate $cinst.$objs.TabPane.$objs.labelWMVertPos.$text as con(pick($prefs.$usecms,"inches","cms")," from top of page")
+;  Background tab
+Calculate $cinst.$objs.TabPane.$objs.BkgImgHPos.$tooltip as con("Offset of image from the left in ",pick($prefs.$usecms,"inches","cms"))
+Calculate $cinst.$objs.TabPane.$objs.BkgImgVPos.$tooltip as con("Offset of image from the top in ",pick($prefs.$usecms,"inches","cms"))
+Calculate $cinst.$objs.TabPane.$objs.BkgImgScaleBorder.$tooltip as con("The border size in ",pick($prefs.$usecms,"inches","cms")," for the background image (distance of image from edge)")

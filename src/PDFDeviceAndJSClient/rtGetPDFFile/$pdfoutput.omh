@@ -1,3 +1,0 @@
-;  this function is called by PDF device when the PDF data is complete     ;; (optional feature, requires PDFDevice)
-;  we can than fetch the PDF binary and store it, so that rtGetPDF can retrieve it
-Do PDF Device.$getmemoryoutput(pID,tvPdfBin)

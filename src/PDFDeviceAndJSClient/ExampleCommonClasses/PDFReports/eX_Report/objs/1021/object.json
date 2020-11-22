@@ -1,0 +1,29 @@
+{
+	"ident": 1021,
+	"order": 9,
+	"objtype": "kText",
+	"properties": {
+		"align": "kRightJst",
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": false,
+		"font": 4,
+		"fontextra": 0,
+		"fontsize": 8,
+		"fontstyle": "kPlain",
+		"height": -1,
+		"left": 15.451,
+		"lineno": 8,
+		"lineoffset": 0.0,
+		"printontop": false,
+		"text": {
+			"type": 14,
+			"calc": "\u001B\u000200000001#e-mail:"
+		},
+		"textcolor": "RGB(0,102,0)",
+		"userinfo": "",
+		"vertextend": false,
+		"width": 1.138
+	}
+}

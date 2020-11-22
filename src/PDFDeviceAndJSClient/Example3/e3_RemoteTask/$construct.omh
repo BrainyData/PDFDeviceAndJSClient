@@ -1,0 +1,31 @@
+;  ultra-thin call to print report and return PDF
+
+;  1. prepare our output device
+Do $cdevice.$assign(kDevPdf)
+;       ;; for ultra-thin connects restore device settings to those from main application thread so we do not inherit
+;       ;; some other client's settings who has left them lying about in this server-thread
+Do PDF Device.$initparams()
+;  1.b     ;; tell PDFDevice to send output to our local variable
+;       ;; IMPORTANT: we can only use a local var if the function is still executing at the time the device closes (i.e. the print-job completes)
+;       ;; if we use a variable that no longer exists by the time the device closes, PDFDevice cannot tell and Omnis may crash
+Do PDF Device.$setmemoryoutput(nam(lvPdfData),pParams.FileName)
+
+;  2. print our report
+If pParams.PrintBlurp
+	;  print three reports to same PDF document
+	Do $cdevice.$open()
+	Set report name eX_Report
+	Print report {(pParams)}     ;; pass form data to report instance
+	Set report name eX_ReportPDFKeyActions
+	Print report
+	Set report name eX_ReportPDFBlurb
+	Print report
+	Do $cdevice.$close()
+Else
+	;  print a single report to PDF document
+	Set report name eX_Report
+	Print report {(pParams)}     ;; pass form data to report instance
+End If
+
+;  3. return result for display on client
+Quit method lvPdfData

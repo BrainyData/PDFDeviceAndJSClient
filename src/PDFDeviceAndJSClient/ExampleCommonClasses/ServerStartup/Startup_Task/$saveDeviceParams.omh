@@ -1,0 +1,17 @@
+;  this method is NOT essential
+;       ;; it is merely used so that the examples perform with a specific set of device options as defined by the designer of these examples
+;       ;; these options are maintained in the file "PDFDeviceAndJSClient.prefs" that accompanies this library
+
+;  fetch the device params from device
+Do $devices.[kDevPdf].$getparam(kDevPdfAll) Returns lvRow
+Calculate lvBin as lvRow     ;; convert to binary for writing to disk
+
+;  delete existing prefs file
+If FileOps.$doesfileexist(lvPrefsPath)
+	Do FileOps.$deletefile(lvPrefsPath)
+End If
+
+;  create and write new prefs
+Do lvFile.$createfile(lvPrefsPath)
+Do lvFile.$writefile(lvBin)
+Do lvFile.$closefile()

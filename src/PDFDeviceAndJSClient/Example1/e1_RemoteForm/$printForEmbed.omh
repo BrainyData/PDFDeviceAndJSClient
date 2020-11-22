@@ -1,0 +1,19 @@
+;  print for embedding in our ctrlEmbedPDF control
+
+;  1. prepare our output device
+Do $cdevice.$assign(kDevPdf)
+;  1.a     ;; apply device params to external device (our task stores settings that apply just to its forms)
+Do $ctask.$applydeviceparams()
+;  1.b     ;; tell PDFDevice to send output to our local variable
+;       ;; IMPORTANT: we can only use a local var if the function is still executing at the time the device closes (i.e. the print-job completes)
+;       ;; if we use a variable that no longer exists by the time the device closes, PDFDevice cannot tell and Omnis may crash
+Do PDF Device.$setmemoryoutput(nam(lvPdfData))
+
+;  2. print our report
+Do method $cinst.$printDocument
+
+;  3. return result for display on client
+If binlength(lvPdfData)
+	;       ;; we can just return the data as is because its prefixed with a mime header (which we requested when calling $setmemoryoutput)
+	Quit method lvPdfData
+End If

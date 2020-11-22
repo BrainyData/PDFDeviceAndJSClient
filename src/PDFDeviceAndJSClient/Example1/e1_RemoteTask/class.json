@@ -1,0 +1,54 @@
+{
+	"classtype": "kRemoteTask",
+	"internalversion": 56,
+	"superclass": "rtPDFOptions",
+	"nextident": 1,
+	"tvardefs": [
+		{
+			"name": "tvPdfData",
+			"order": 1,
+			"type": "kBinary",
+			"subtype": 0,
+			"sublen": 100000000,
+			"desc": "will contain pdf data if the task is to return the pdf to the client"
+		}
+	],
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivCanCloseAfterPost",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kTrue"
+		}
+	],
+	"properties": {
+		"basehttpresponseheaders": "",
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2020-05-31 07:05:44",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"issupercomponent": false,
+		"localtestdata": "",
+		"localtime": false,
+		"maxtime": 0,
+		"maxusers": 0,
+		"moddate": "2020-11-21 14:53:42",
+		"restful": false,
+		"restfulapiname": "",
+		"showascheckedout": false,
+		"stringtable": "",
+		"timeout": 0,
+		"userinfo": "",
+		"version": "",
+		"webservice": ""
+	}
+}

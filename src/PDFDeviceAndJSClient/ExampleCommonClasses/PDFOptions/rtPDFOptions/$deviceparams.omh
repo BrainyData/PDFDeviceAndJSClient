@@ -1,0 +1,2 @@
+;  return this task's device params to caller
+Quit method ivDeviceParams

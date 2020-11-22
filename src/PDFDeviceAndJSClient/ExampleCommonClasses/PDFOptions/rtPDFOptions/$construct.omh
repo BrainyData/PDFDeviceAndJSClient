@@ -1,0 +1,2 @@
+;  make sure we do not inherit other users PDF settings (at the same time fetch our own device settings for this remote form session)
+Do PDF Device.$initparams(ivDeviceParams)

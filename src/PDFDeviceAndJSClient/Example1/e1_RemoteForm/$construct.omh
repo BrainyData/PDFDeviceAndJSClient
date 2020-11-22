@@ -1,0 +1,3 @@
+;  Create some demo data
+Do ivData.$define(Title,FirstName,LastName)
+Do ivData.$assigncols('Mr.','John','Doe')

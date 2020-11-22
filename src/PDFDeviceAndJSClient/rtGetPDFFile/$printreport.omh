@@ -1,6 +1,0 @@
-;  tell the device the notation to our method that is to receive the PDF binary data
-Do $cdevice.$assign(kDevPdf)
-Do $cdevice.$setparam(kDevPdfFileName,"$ctask.$pdfoutput(#)")     ;; external devices can access $ctask thus preventing threading issues !!!
-;  print the report
-Set report name repPDFDevice
-Print report {*}

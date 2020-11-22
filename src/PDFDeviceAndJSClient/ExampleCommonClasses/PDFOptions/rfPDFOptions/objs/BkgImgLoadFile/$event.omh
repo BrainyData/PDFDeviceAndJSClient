@@ -1,0 +1,15 @@
+On evFileUploaded
+	Calculate ivFileUploadMimeList as ivFileUploadRow.C1
+	For ivFileUploadMimeList.$line from 1 to ivFileUploadMimeList.$linecount step 1
+		If ivFileUploadMimeList.name='Content-Type'
+			Switch trim(ivFileUploadMimeList.value)
+				Case 'image/png'
+					Calculate ivBkgImgData as tvFileUpload
+				Case 'image/jpg'
+					Calculate ivBkgImgData as pictconvto('jpg',tvFileUpload,'png')
+				Case 'image/gif'
+					Calculate ivBkgImgData as pictconvto('gif',tvFileUpload,'png')
+			End Switch
+		End If
+	End For
+	Do $cinst.$objs.TabPane.$objs.BkgImgLoadFile.$action.$assign(kJSFileActionCloseUpload)

@@ -1,0 +1,30 @@
+{
+	"ident": 1024,
+	"order": 16387,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "",
+		"font": 1,
+		"fontsize": 18,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 27,
+		"left": 26,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "\u001B\u000200000001#Brainy Data PDFDevice JS-Client Examples"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 11,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 693
+	}
+}

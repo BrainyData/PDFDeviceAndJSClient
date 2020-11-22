@@ -1,0 +1,12 @@
+;  initialize our main thread device parameters to a default that all threaded devices can inherit
+
+;       ;; 1. get all parameters as a row var
+Do $devices.[kDevPdf].$getparam(kDevPdfAll) Returns lvParams
+;       ;; 2. assign default settings (Note: parameters have a natural sensible default state, i.e. kDevPdfEmbedFonts is true and kDevPdfEmbedLicFonts is false)
+Calculate lvParams.[kDevPdfImgConvBest] as kFalse     ;; NOTE!!! For js-client, always turn this off as it dramatically improves performance whan reports contain images.
+Calculate lvParams.[kDevPdfInfoTitle] as con("PDFDevice Examples - ",#D)
+Calculate lvParams.[kDevPdfInfoSubject] as "JS-Client examples for PDFDevice"
+Calculate lvParams.[kDevPdfInfoAuthor] as "Brainy Data Limited"
+Calculate lvParams.[kDevPdfInfoKeywords] as "PDFDevice Example JS-Client showpdf assignpdf"
+;       ;; 3. assign the altered parameters to main thread device
+Do $devices.[kDevPdf].$setparam(kDevPdfAll,lvParams)

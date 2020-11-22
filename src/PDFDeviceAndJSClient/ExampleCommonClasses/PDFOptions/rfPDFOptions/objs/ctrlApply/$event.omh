@@ -1,0 +1,3 @@
+On evClick
+	Do method $cinst.$serverSaveParams
+	Do $ctask.$closeform($cclass().$name)

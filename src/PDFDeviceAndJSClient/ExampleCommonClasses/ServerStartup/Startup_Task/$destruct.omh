@@ -1,0 +1,10 @@
+;  * the application is quitting *
+
+;  stop the Omnis server first
+Stop server
+
+;  now it should be save to stop the BDPDF device server
+Do PDF Device.$stopserver()
+
+;  Not ESSENTIAL: only for the purpose for maintaining the developers device settings as this example changes them
+Do $cinst.$restoreDeviceParams()

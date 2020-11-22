@@ -1,0 +1,13 @@
+;  build font list
+Do ivWMFontList.$define(ivFontName)
+Do FontOps.$replistfonts(ivWMFontList)
+Do ivWMFontList.$sort($ref.ivFontName)
+Calculate ivOutlineFontList as ivWMFontList
+;  build WM Color List
+Do ivWMColorList.$define(ivColorStr,ivColorId)
+Do ivWMColorList.$add("Default",0)
+Do $root.$constants.$sendall(ivWMColorList.$add(replace($sendallref.$desc,"color",""),truergb($sendallref())),$sendallref.$constantgroup="Colors")
+;  init controls
+Do method $cinst.$serverInitControls
+;  load device parameters
+Do method $cinst.$serverLoadParams

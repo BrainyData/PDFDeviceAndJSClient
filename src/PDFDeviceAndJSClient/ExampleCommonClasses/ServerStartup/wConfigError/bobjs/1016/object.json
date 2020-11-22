@@ -1,0 +1,30 @@
+{
+	"ident": 1016,
+	"order": 16385,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "",
+		"font": 1,
+		"fontsize": 15,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 1195,
+		"left": 22,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "The Omnis config file does not contain a valid \"getpdfFolders\" entry to allow access to temp PDF files from third-party components that must provide a full path for the 'showpdf' and 'assignpdf' client command. \r\rIn order to run \"Example 2\" the config \"server\" entry should contain the full path to the \"omnispdf\" folder, perhaps looking something like this on macOS …\r\r    \"server\": {\r        \"timeoutReads\": true,\r        \"readTimeout\": 20,\r        \"getpdfFolders\": [[\r            \"/Users/user_name/Library/Application Support/Omnis/Omnis Studio 10.2/omnispdf\"\r        ]\r    },\r\r… or on Windows (note the double slashes)…\r\r    \"server\": {\r        \"timeoutReads\": true,\r        \"readTimeout\": 20,\r        \"getpdfFolders\": [[\r            \"C:\\\\Users\\\\user_name\\\\AppData\\\\Local\\\\Omnis Software\\\\OS 10.2\\\\omnispdf\"\r        ]\r    },\r\rAlternatively, you may use a different folder, i.e. \"/Users/user_name/temp\" as the prefered folder for PDFDevice files. In this case any calls to $settempfilename must be altered to specify the prefered folder in the second parameter and the full path to this folder must be added to the config file as shown above. You may add more than one path to the config file, i.e.\r\r    \"server\": {\r        \"timeoutReads\": true,\r        \"readTimeout\": 20,\r        \"getpdfFolders\": [[\r            \"/Users/user_name/Library/Application Support/Omnis/Omnis Studio 10.2/omnispdf\",\r            \"/Users/user_name/temp\",\r            \"/Users/Shared/temp_admin\",\r            \"/Users/Shared/temp_accounts\"\r        ]\r    },\r\rPlease also see technical note TN0024 at https://supportpublic.brainydata.com/tn/tn0024.pdf.\r"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 14,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 716
+	}
+}

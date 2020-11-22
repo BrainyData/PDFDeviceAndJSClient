@@ -1,0 +1,23 @@
+{
+	"classtype": "kRemoteMenu",
+	"internalversion": 2,
+	"nextident": 1011,
+	"properties": {
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2020-05-11 21:02:31",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": false,
+		"moddate": "2020-05-11 21:03:49",
+		"showascheckedout": false,
+		"title": {
+			"type": 0,
+			"calc": "Font Size"
+		},
+		"userinfo": "",
+		"version": ""
+	}
+}

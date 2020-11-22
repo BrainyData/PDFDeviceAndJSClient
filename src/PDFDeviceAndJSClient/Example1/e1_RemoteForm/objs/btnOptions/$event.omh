@@ -1,0 +1,4 @@
+On evClick
+	;  display our device options form
+	;
+	Do method $cinst.$openOptionsForm

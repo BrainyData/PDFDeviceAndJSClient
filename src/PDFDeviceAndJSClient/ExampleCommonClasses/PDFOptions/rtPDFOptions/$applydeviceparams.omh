@@ -1,0 +1,4 @@
+;  applies this task's device params to external device (this effects the current server thread)
+If not(isnull(ivDeviceParams))
+	Do $devices.[kDevPdf].$setparam(kDevPdfAll,ivDeviceParams)
+End If

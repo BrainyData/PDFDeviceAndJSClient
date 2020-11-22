@@ -1,0 +1,2 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do $classes.e3_RemoteTask.$methods.//$construct//.$modify()

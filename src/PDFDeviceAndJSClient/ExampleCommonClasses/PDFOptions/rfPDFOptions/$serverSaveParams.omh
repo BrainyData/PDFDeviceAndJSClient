@@ -1,0 +1,28 @@
+;  special case for color button, page layout and mode
+;  Calculate ivParams.WMTextColor as refWMTextColor.$contents
+;  Calculate ivParams.WMFont as $cinst.$objs.TabPane.$objs.WMFontName.$contents
+;  Calculate ivParams.PageLayout as refPageLayout.$contents
+;  Calculate ivParams.PageMode as refPageMode.$contents
+
+;  outlines (must decrease style num by 1 as it was increased for interface to work)
+Calculate ivOutlines as ivParams.Outlines
+For ivOutlines.$line from 1 to ivOutlines.$linecount step 1
+	Calculate ivOutlines.FontStyle as ivOutlines.FontStyle+1
+End If
+
+;  compatibility
+Do ivParams.$cols.MacDPILines.$name.$assign('72DPILines')     ;; must restore '72DPILines' column name
+
+;  save security permissions
+Calculate permissionBits as pick(ivPermPrint,permissionBits,bitor(permissionBits,kDevPdfPermPrint))
+Calculate permissionBits as pick(ivPermModify,permissionBits,bitor(permissionBits,kDevPdfPermModify))
+Calculate permissionBits as pick(ivPermCopy,permissionBits,bitor(permissionBits,kDevPdfPermCopy))
+Calculate permissionBits as pick(ivPermFillFieldsComments,permissionBits,bitor(permissionBits,kDevPdfPermFillFieldsComments))
+Calculate permissionBits as pick(ivPermFillFields,permissionBits,bitor(permissionBits,kDevPdfPermFillFields))
+Calculate permissionBits as pick(ivPermExtract,permissionBits,bitor(permissionBits,kDevPdfPermExtract))
+Calculate permissionBits as pick(ivPermAssemble,permissionBits,bitor(permissionBits,kDevPdfPermAssemble))
+Calculate permissionBits as pick(ivPermPrintFull,permissionBits,bitor(permissionBits,kDevPdfPermPrintFull))
+Calculate ivParams.Permissions as permissionBits
+;  now save all the device parameters (to current task!!!)
+Calculate $ctask.$deviceparams as ivParams
+Quit method kTrue

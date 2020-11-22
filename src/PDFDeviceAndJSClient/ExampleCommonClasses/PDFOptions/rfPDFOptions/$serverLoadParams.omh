@@ -1,0 +1,45 @@
+;  get row variable with all device parameters (from our current task!!!)
+Calculate ivParams as $ctask.$deviceparams
+
+;  special case for color button, page layout and mode
+Do ivWMFontList.$search($ref.C1=ivParams.WMFont,kTrue,kFalse,kFalse,kFalse) Returns ivWMFontList.$line
+If not(ivWMFontList.$line)
+	Do ivWMFontList.$add(ivParams.WMFont)
+	Calculate ivWMFontList.$line as ivWMFontList.$linecount
+End If
+Do ivWMColorList.$search($ref.C2=ivParams.WMTextColor,kTrue,kFalse,kFalse,kFalse) Returns ivWMColorList.$line
+If not(ivWMColorList.$line)
+	Calculate ivWMColorList.$line as 1
+	Calculate ivWMColorList.C2 as ivParams.WMTextColor
+End If
+;  must convert picture
+Calculate ivBkgImgData as pictconvto(pictformat(ivParams.BkgImgData),ivParams.BkgImgData,"PNG")
+
+Calculate refPageLayout.$contents as ivParams.PageLayout
+Calculate refPageMode.$contents as ivParams.PageMode
+
+;  outlines (must increase style num by 1 for interface)
+Calculate ivOutlines as ivParams.Outlines
+For ivOutlines.$line from 1 to ivOutlines.$linecount step 1
+	Calculate ivOutlines.FontStyle as ivOutlines.FontStyle+1
+End For
+Calculate ivOutlinesCount as ivOutlines.$linecount
+
+;  compatibility
+Do ivParams.$cols.//72DPILines//.$name.$assign('MacDPILines')     ;; replace '72DPILines' column name as it does not work in JS Client
+Calculate ivColorProfileSizeText as con(binlength(ivParams.PdfaOutputProfile)," bytes")
+Calculate ivColorProfileInfo as ivParams.PdfaOutputInfo
+
+;  set security permissions
+Calculate permissionBits as ivParams.Permissions
+Calculate ivPermPrint as 0<>bitand(permissionBits,kDevPdfPermPrint)
+Calculate ivPermModify as 0<>bitand(permissionBits,kDevPdfPermModify)
+Calculate ivPermCopy as 0<>bitand(permissionBits,kDevPdfPermCopy)
+Calculate ivPermFillFieldsComments as 0<>bitand(permissionBits,kDevPdfPermFillFieldsComments)
+Calculate ivPermFillFields as 0<>bitand(permissionBits,kDevPdfPermFillFields)
+Calculate ivPermExtract as 0<>bitand(permissionBits,kDevPdfPermExtract)
+Calculate ivPermAssemble as 0<>bitand(permissionBits,kDevPdfPermAssemble)
+Calculate ivPermPrintFull as 0<>bitand(permissionBits,kDevPdfPermPrintFull)
+
+;  enable/disable controls
+Do method $cinst.$setControls

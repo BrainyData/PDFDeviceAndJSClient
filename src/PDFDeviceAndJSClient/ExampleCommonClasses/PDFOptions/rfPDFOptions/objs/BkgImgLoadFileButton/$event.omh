@@ -1,0 +1,4 @@
+On evClick
+	Do ivFileUploadRow.$define(ivFileUploadMimeList,ivFileUploadTaskvarName)
+	Do ivFileUploadRow.$assigncols(ivFileUploadMimeList,'tvFileUpload')
+	Do $cinst.$objs.TabPane.$objs.BkgImgLoadFile.$action.$assign(kJSFileActionUpload)

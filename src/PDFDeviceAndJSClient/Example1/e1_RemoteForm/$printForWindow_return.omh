@@ -1,0 +1,6 @@
+
+;  open window with url returned by server
+;       ;; using Javascript, instead of $cinst.$showurl, makes better feedback possible in case the browser blocks our popup window
+JavaScript: var w = window.open(pUrl);
+JavaScript: if (w==null)
+JavaScript: alert("The browser prevented the report window from opening. Please allow the browser to open this window by enabling popups for this request.");

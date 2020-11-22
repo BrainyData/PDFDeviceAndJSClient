@@ -1,0 +1,13 @@
+{
+	"ident": 1020,
+	"order": 4,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 1003,
+		"enabled": true,
+		"iconid": 0,
+		"text": "Times New Roman",
+		"userinfo": ""
+	}
+}

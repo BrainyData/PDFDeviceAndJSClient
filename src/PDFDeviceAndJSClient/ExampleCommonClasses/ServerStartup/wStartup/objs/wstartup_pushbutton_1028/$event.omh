@@ -1,0 +1,15 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Calculate lvConfig as $prefs.$getconfigjson()
+	Calculate lvConfigServer as lvConfig.server
+	Calculate lvConfigPdfFolders as lvConfigServer.getpdfFolders
+	If lvConfigPdfFolders.$colcount>=1
+		For colNo from 1 to lvConfigPdfFolders.$colcount step 1
+			Calculate lvFolder as lvConfigPdfFolders.C[colNo]
+			If pos("omnispdf",lvFolder)
+				Do $classes.e2_RemoteForm.$open()
+				Quit method
+			End If
+		End For
+	End If
+	
+	Do $windows.wConfigError.$openonce('*',kWindowCenter)

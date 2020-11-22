@@ -1,0 +1,4 @@
+;  sets this task's device params
+Calculate ivDeviceParams as pDeviceParams
+
+;  NOTE: here you may consider storing device parameters for specific users if you have returning users with a log-in

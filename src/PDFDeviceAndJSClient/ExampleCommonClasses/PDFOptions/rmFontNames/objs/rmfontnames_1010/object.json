@@ -1,0 +1,16 @@
+{
+	"ident": 1017,
+	"order": 2,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"commandid": 1001,
+		"enabled": true,
+		"iconid": 0,
+		"text": {
+			"type": 0,
+			"calc": "Comic Sans MS"
+		},
+		"userinfo": ""
+	}
+}

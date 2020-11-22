@@ -1,0 +1,17 @@
+On evPost     ;; received when client executes the $showurl
+	
+	;  we must prevent this task from closing after we return from the post (see $canclose)
+	Calculate ivCanCloseAfterPost as kFalse
+	
+	;  if action = fetchpdf, return the pdf data
+	If pPostData.FormAction="fetchpdf"&binlength(tvPdfData)
+		
+		Calculate pPostResult as tvPdfData
+		Calculate tvPdfData as #NULL
+		
+	Else
+		
+		Calculate pPostResult as con("content-type: text/text",chr(13,10),"content-length: ",len(lvErrorText),chr(13,10),lvErrorText)
+		
+	End If
+	Quit event handler

@@ -1,0 +1,25 @@
+{
+	"ident": 1012,
+	"order": 2,
+	"objtype": "kBackpicture",
+	"properties": {
+		"desgroup": 0,
+		"deslock": false,
+		"fieldstyle": "",
+		"floating": true,
+		"height": 5.009,
+		"left": 0.0,
+		"lineno": 1,
+		"lineoffset": 0.0,
+		"picture": {
+			"type": 256,
+			"calc": {
+				"$png": "picture.png"
+			}
+		},
+		"printontop": false,
+		"userinfo": "",
+		"vertextend": false,
+		"width": 20.003
+	}
+}

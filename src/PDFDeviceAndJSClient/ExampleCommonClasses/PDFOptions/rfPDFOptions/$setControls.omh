@@ -1,0 +1,96 @@
+;  Image Handling
+Calculate enabled as pick(ivParams.ConvJPEG,0,1)
+Calculate $cinst.$objs.TabPane.$objs.JPEGQuality.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.PictMetaDPI.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.ImgConvBest.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.ImgConvBest.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelJPEGQuality.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelJPEGQualityDesc1.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelJPEGQualityDesc2.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelPictMetaDPI.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelPictMetaDPIDesc.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+;  Font Handling
+Calculate enabled as pick(ivParams.EmbedFonts,0,1)
+Calculate $cinst.$objs.TabPane.$objs.EmbedLicensed.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.SubstituteFonts.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.EmbedLicensed.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.SubstituteFonts.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+;  Watermark
+Calculate enabled as pick(ivParams.Watermark,0,1)
+Calculate $cinst.$objs.TabPane.$objs.WMText.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.WMFontName.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.WMFontSize.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.WMTextColor.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.WMAngle.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.WMInFront.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.WMHorzPos.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.WMVertPos.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.labelWMText.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelWMFontName.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelWMFontSize.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelWMTextColor.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelWMAngle.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelWMAngleDesc1.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelWMAngleDesc2.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelWMPos.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelWMHorzPos.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelWMVertPos.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelWMInFront.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.WMInFront.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+;  Background
+Calculate enabled as pick(ivParams.BkgImgOn,0,1)
+Calculate $cinst.$objs.TabPane.$objs.BkgImgFirstPageOnly.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.BkgImgScale.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.BkgImgData.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.BkgImgFirstPageOnly.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.BkgImgScale.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+
+Calculate enabled as pick(ivParams.BkgImgOn&not(ivParams.BkgImgScale),0,1)
+Calculate $cinst.$objs.TabPane.$objs.BkgImgHPos.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.BkgImgVPos.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.BkgImgDPI.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.BkgImgHPos.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.BkgImgVPos.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.BkgImgDPI.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelOptionsWithoutScaling.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelBkgImgHPos.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelBkgImgVPos.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelBkgImgDPI.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+
+Calculate enabled as pick(ivParams.BkgImgOn&ivParams.BkgImgScale,0,1)
+Calculate $cinst.$objs.TabPane.$objs.BkgImgKeepAspect.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.BkgImgScaleBorder.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.BkgImgKeepAspect.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.BkgImgScaleBorder.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelOptionsWithScaling.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.labelBkgImgScaleBorder.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+
+Calculate enabled as len(ivParams.OwnerPassword)>0|len(ivParams.UserPassword)>0
+Calculate $cinst.$objs.TabPane.$objs.EncryptUse128Bit.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.PermPrint.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.PermPrintFull.$enabled as enabled&ivPermPrint
+Calculate $cinst.$objs.TabPane.$objs.PermModify.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.PermCopy.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.PermFillFieldsComments.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.PermFillFields.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.PermExtract.$enabled as enabled
+Calculate $cinst.$objs.TabPane.$objs.PermAssemble.$enabled as enabled
+
+Calculate $cinst.$objs.TabPane.$objs.EncryptUse128Bit.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.PermPrint.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.PermPrintFull.$textcolor as pick(enabled&ivPermPrint,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.PermModify.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.PermCopy.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.PermFillFieldsComments.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.PermFillFields.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.PermExtract.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+Calculate $cinst.$objs.TabPane.$objs.PermAssemble.$textcolor as pick(enabled,kDarkGray,kColorDefault)
+
+Quit method
+Calculate refPdfaOutputInfo.$enabled as ivParams.PdfaEnabled
+;  Calculate refPdfaSelectColorProfile.$enabled as ivParams.PdfaEnabled
+;  Calculate refPdfaClearColorProfile.$enabled as ivParams.PdfaEnabled&binlength(ivParams.PdfaOutputProfile)>0
+;  Calculate refPdfaOutputInfo.$fieldstyle as pick(ivParams.PdfaEnabled,"CtrlEditTextDis","CtrlEditText")
+;  Calculate refPdfaOutputSize.$fieldstyle as pick(ivParams.PdfaEnabled,"CtrlLabelDis","CtrlLabel")
+;  Calculate refPdfaOutputInfoLabel.$fieldstyle as pick(ivParams.PdfaEnabled,"CtrlLabelLargeDis","CtrlLabelLarge")
+;  Calculate refPdfaOutputSizeLabel.$fieldstyle as pick(ivParams.PdfaEnabled,"CtrlLabelLargeDis","CtrlLabelLarge")
